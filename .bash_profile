@@ -1,22 +1,19 @@
-
-export PATH="$PATH:$PATH/usr/local/bin:/usr/bin:/bin:$HOME/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:/Users/yuvalgnessin/.rvm/bin:/Users/yuvalgnessin/bin"
+export PATH="/usr/local/bin:$PATH:$PATH/usr/local/bin:/usr/sbin:/sbin:/usr/bin:/bin:$HOME/bin:/usr/local/sbin:/usr/local/git/bin:/Users/yuvalgnessin/.rvm/bin:/Users/yuvalgnessin/bin"
 
 # Tell ls to be colourful
-export CLICOLOR=1
+# export CLICOLOR=1
 
 # Tell grep to highlight matches
-export GREP_OPTIONS='--color=auto'
+# export GREP_OPTIONS='--color=auto'
 
 # Resolving XMog Mac issues with coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
-export PATH=$PATH:/usr/local/git/bin
 
 # Set up AWS CLI
 export PATH="$PATH:/Users/yuvalgnessin/.local/lib/aws/bin"
 
 # Source this other file
-source ~/.profile
+# source ~/.profile
 
 # Lots of handy aliases
 alias b="bundle exec"
@@ -25,9 +22,10 @@ alias ...="cd ../.."
 alias dev="git checkout dev"
 alias stable="git checkout stable"
 alias master="git checkout master"
-alias xmog="cd ~/railsprojects/transmogrifier"
+alias xmog="cd ~/Documents/railsprojects/transmogrifier"
 alias smog="xmog"
-alias autos="cd ~/railsprojects/autos"
+alias autos="cd ~/Documents/railsprojects/autolist"
+alias android="cd ~/Documents/androidprojects/android"
 alias gc="git commit"
 alias gcnv="git commit --no-verify"
 alias gca="git commit --amend"
@@ -49,11 +47,19 @@ git_exclude() {
 
 source ~/.git-prompt.sh
 
+# Load git completion scripts
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-export PATH="/Users/yuvalgnessin/railsprojects/scripts/bin:$PATH"
+# LOAD BASH RC
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PATH="$PATH:~/Documents/scripts/bin"
 
 #  Customize BASH PS1 prompt to show current GIT repository and branch.
 #  by Mike Stewart - http://MediaDoneRight.com
@@ -160,10 +166,3 @@ else \
   # @2 - Prompt when not in GIT repo
   echo " '$Yellow$PathShort$Color_Off'\$ "; \
 fi)'
-
-# LOAD BASH RC
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
-fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
