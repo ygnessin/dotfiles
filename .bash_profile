@@ -1,5 +1,8 @@
 export PATH="/usr/local/bin:$PATH:$PATH/usr/local/bin:/usr/sbin:/sbin:/usr/bin:/bin:$HOME/bin:/usr/local/sbin:/usr/local/git/bin:/Users/yuvalgnessin/.rvm/bin:/Users/yuvalgnessin/bin"
 
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"
+
 # Tell ls to be colourful
 # export CLICOLOR=1
 
@@ -17,6 +20,9 @@ export PATH="/Applications/android-sdk-macosx/platform-tools:$PATH"
 
 # Set up Android ANT
 export PATH="$PATH:/Applications/apache-ant-1.9.4/bin/"
+
+# AWS CLI auto-complete
+complete -C '/usr/local/bin/aws_completer' aws
 
 # Source this other file
 # source ~/.profile
@@ -63,6 +69,11 @@ fi
 # LOAD BASH RC
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
+fi
+
+# ADB auto-completion
+if [ -e ~/.adb-bash-completion.txt ] ; then
+  source ~/.adb-bash-completion.txt
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
