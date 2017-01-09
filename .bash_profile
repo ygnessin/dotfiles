@@ -12,6 +12,12 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # Set up AWS CLI
 export PATH="$PATH:/Users/yuvalgnessin/.local/lib/aws/bin"
 
+# Set up Android ADB
+export PATH="/Applications/android-sdk-macosx/platform-tools:$PATH"
+
+# Set up Android ANT
+export PATH="$PATH:/Applications/apache-ant-1.9.4/bin/"
+
 # Source this other file
 # source ~/.profile
 
@@ -22,10 +28,11 @@ alias ...="cd ../.."
 alias dev="git checkout dev"
 alias stable="git checkout stable"
 alias master="git checkout master"
-alias xmog="cd ~/Documents/railsprojects/transmogrifier"
+alias xmog="cd ~/Documents/autolist/transmogrifier"
 alias smog="xmog"
-alias autos="cd ~/Documents/railsprojects/autolist"
-alias android="cd ~/Documents/androidprojects/android"
+alias autos="cd ~/Documents/autolist/autolist"
+alias grumman="cd ~/Documents/autolist/grumman"
+alias android="cd ~/Documents/autolist/android"
 alias gc="git commit"
 alias gcnv="git commit --no-verify"
 alias gca="git commit --amend"
@@ -39,6 +46,7 @@ alias gl="git log"
 alias gl1="git log -1"
 alias gl2="git log -2"
 alias gl3="git log -3"
+alias grsh="git reset --soft HEAD~1"
 alias deploy="bash ~/bin/deploy.sh"
 
 git_exclude() {
@@ -61,9 +69,14 @@ fi
 
 export PATH="$PATH:~/Documents/scripts/bin"
 
+# pyenv setup
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt
+#
 #  Customize BASH PS1 prompt to show current GIT repository and branch.
 #  by Mike Stewart - http://MediaDoneRight.com
-
+#
 #  SETUP CONSTANTS
 #  Bunch-o-predefined colors.  Makes reading code easier than escape sequences.
 #  I don't remember where I found this.  o_O
