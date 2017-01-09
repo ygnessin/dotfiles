@@ -15,11 +15,3 @@
 # source /Users/yuvalgnessin/railsprojects/scripts/init.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-# AWS CLI auto-complete
-complete -C '/usr/local/bin/aws_completer' aws
-
-# ADB auto-completion
-if [ -e /usr/local/bin/adb-bash-completion.txt ] ; then
-  source /usr/local/bin/adb-bash-completion.txt
-fi
