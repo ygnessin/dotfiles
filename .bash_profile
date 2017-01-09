@@ -72,8 +72,8 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # ADB auto-completion
-if [ -e ~/.adb-bash-completion.txt ] ; then
-  source ~/.adb-bash-completion.txt
+if [ -e ~/.adb-bash-completion.bash ] ; then
+  source ~/.adb-bash-completion.bash
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
