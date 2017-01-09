@@ -1,0 +1,14 @@
+{
+  "ad": "vb-autos-direct",
+  "ap": "vb-autos-direct",
+  "ax": "vb-autos-experimental",
+  "as": "vb-autos-staging",
+
+  "tp": "transmogrifier-autos-prod",
+  "tx": "transmogrifier-autos-exp",
+  "tap": "transmogrifier-autos-prod",
+  "tax": "transmogrifier-autos-exp",
+
+  "gp": "grumman",
+  "gx": "grumman-experimental"
+}
