@@ -20,10 +20,6 @@ export PATH="/Applications/android-sdk-macosx/platform-tools:$PATH"
 # Set up Android ANT
 export PATH="$PATH:/Applications/apache-ant-1.9.4/bin/"
 
-# qt is needed for capybar-webkit and has issues on macOS Sierra.
-# https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit#macos-sierra-1012
-# export PATH=~/Qt5.5.1/5.5/clang_64/bin:$PATH
-
 # AWS CLI auto-complete
 complete -C '/usr/local/bin/aws_completer' aws
 
