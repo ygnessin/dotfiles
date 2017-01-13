@@ -1,7 +1,6 @@
-export PATH="/usr/local/bin:$PATH:$PATH/usr/local/bin:/usr/sbin:/sbin:/usr/bin:/bin:$HOME/bin:/usr/local/sbin:/usr/local/git/bin:/Users/yuvalgnessin/.rvm/bin:/Users/yuvalgnessin/bin"
+export PATH="/usr/local/bin:$PATH:$PATH/usr/local/bin:/usr/sbin:/sbin:/usr/bin:/bin:$HOME/bin:/usr/local/sbin:/usr/local/git/bin:/Users/yuval/.rvm/bin:/Users/yuval/bin"
 
 # Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # Tell ls to be colourful
 # export CLICOLOR=1
@@ -20,6 +19,10 @@ export PATH="/Applications/android-sdk-macosx/platform-tools:$PATH"
 
 # Set up Android ANT
 export PATH="$PATH:/Applications/apache-ant-1.9.4/bin/"
+
+# qt is needed for capybar-webkit and has issues on macOS Sierra.
+# https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit#macos-sierra-1012
+# export PATH=~/Qt5.5.1/5.5/clang_64/bin:$PATH
 
 # AWS CLI auto-complete
 complete -C '/usr/local/bin/aws_completer' aws
@@ -76,12 +79,14 @@ if [ -e ~/.adb-bash-completion.bash ] ; then
   source ~/.adb-bash-completion.bash
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 export PATH="$PATH:~/Documents/scripts/bin"
 
 # pyenv setup
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Add ssh keys to SSH Agent, which doesn't happen on startup with macOS Sierra
+# https://apple.stackexchange.com/questions/254468/macos-sierra-doesn-t-seem-to-remember-ssh-keys-between-reboots
+ssh-add -K 2>/dev/null;
 
 # http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt
 #
@@ -190,3 +195,5 @@ else \
   # @2 - Prompt when not in GIT repo
   echo " '$Yellow$PathShort$Color_Off'\$ "; \
 fi)'
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
