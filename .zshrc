@@ -37,7 +37,6 @@ alias gl2="git log -2"
 alias gl3="git log -3"
 alias ktlint="./gradlew lintKotlin"
 alias ktlintFormat="./gradlew formatKotlin"
-alias ktlint format="./gradlew formatKotlin"
 
 git_exclude() {
   echo $1 >> .git/info/exclude
