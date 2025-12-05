@@ -43,8 +43,8 @@ git_exclude() {
 }
 
 # set up sublime as default editor
-export EDITOR=/usr/bin/subl
-export VISUAL=/usr/bin/subl
+export EDITOR=subl
+export VISUAL=subl
 
 # set up android home
 export ANDROID_HOME="/Users/yuvalgnessin/Library/Android/sdk"
