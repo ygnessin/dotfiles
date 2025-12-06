@@ -37,3 +37,4 @@
 	tool = ksdiff
 [push]
 	default = simple
+    autoSetupRemote = true
